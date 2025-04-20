@@ -1,18 +1,18 @@
 /*
 ===============================================================================
-Stored Procedure: Load Bronze Layer (Source -> Bronze)
+Stored Procedure: Carregamento da Camada Bronze (Source -> Bronze)
 ===============================================================================
 Script Purpose:
-    This stored procedure loads data into the 'bronze' schema from external CSV files. 
-    It performs the following actions:
-    - Truncates the bronze tables before loading data.
-    - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
+    Essa stored procedure carrega dados no esquema 'bronze' a partir de arquivos CSV files externos. 
+    Ela realiza as seguintes ações:
+    - Faz um truncate nas tabelas bronze antes de carregar os dados.
+    - Usa o comando `BULK INSERT` para carregar dados de arquivos CSV para as tabelas bronze.
 
-Parameters:
-    None. 
-	  This stored procedure does not accept any parameters or return any values.
+Parâmetros:
+    Nenhum. 
+	  Essa stored procedure não aceita parâmetros tampouco retorna valores.
 
-Usage Example:
+Exemplo de uso:
     EXEC bronze.load_bronze;
 ===============================================================================
 */
