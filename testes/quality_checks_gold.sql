@@ -1,24 +1,24 @@
 /*
 ===============================================================================
-Quality Checks
+Testes de qualidade
 ===============================================================================
-Script Purpose:
-    This script performs quality checks to validate the integrity, consistency, 
-    and accuracy of the Gold Layer. These checks ensure:
-    - Uniqueness of surrogate keys in dimension tables.
-    - Referential integrity between fact and dimension tables.
-    - Validation of relationships in the data model for analytical purposes.
+Objetivo do Script:
+    Esse script executa testes de qualidade para validar a integridade e 
+consistêcia da camada Gold. Esses testes incluem:
+    - Exclusividade das surrogate keys nas tabelas dimensões.
+    - Integridade referencial entre as tabelas dimensões e a tabela fato.
+    - Validação de relacionamentos no modelo de dados para fins analíticos.
 
-Usage Notes:
-    - Investigate and resolve any discrepancies found during the checks.
+Notas de uso:
+    - Investigar e resolver quaisquer discrepâncias encontradas durantes as checagens.
 ===============================================================================
 */
 
 -- ====================================================================
--- Checking 'gold.dim_customers'
+-- Checando 'gold.dim_customers'
 -- ====================================================================
--- Check for Uniqueness of Customer Key in gold.dim_customers
--- Expectation: No results 
+-- Checagem de exclusividade do Customer Key na tabela gold.dim_customers
+-- Esperado: 0 resultados
 SELECT 
     customer_key,
     COUNT(*) AS duplicate_count
@@ -27,10 +27,10 @@ GROUP BY customer_key
 HAVING COUNT(*) > 1;
 
 -- ====================================================================
--- Checking 'gold.product_key'
+-- Checando 'gold.product_key'
 -- ====================================================================
--- Check for Uniqueness of Product Key in gold.dim_products
--- Expectation: No results 
+-- Checagem de exclusividade do Product Key na tabela gold.dim_products
+-- Esperado: 0 resultados
 SELECT 
     product_key,
     COUNT(*) AS duplicate_count
